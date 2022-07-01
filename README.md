@@ -1,6 +1,6 @@
 # Shield Bot
 
-auto moderation discord bot by **El Gladiators**
+auto moderation discord bot
 
 ## Create .env
 
