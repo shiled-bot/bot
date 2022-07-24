@@ -18,12 +18,12 @@ module.exports = async (client, channel) => {
   )
     return;
 
-  const channel = await checkLoggingChannel(
+  const logChannel = await checkLoggingChannel(
     channel.guild,
     logging.server.channel_id,
     "server"
   );
-  if (!channel) return;
+  if (!logChannel) return;
 
   const embed = new MessageEmbed()
     .setTitle(channel.guild.name)

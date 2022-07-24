@@ -22,12 +22,12 @@ module.exports = async (client, channel) => {
   )
     return;
 
-  const channel = await checkLoggingChannel(
+  const logChannel = await checkLoggingChannel(
     channel.guild,
     logging.server.channel_id,
     "server"
   );
-  if (!channel) return;
+  if (!logChannel) return;
 
   const button = new MessageButton()
     .setLabel("Delete Channel")
@@ -46,7 +46,7 @@ module.exports = async (client, channel) => {
     })
     .setTimestamp();
 
-  channel.send({
+  logChannel.send({
     embeds: [embed],
     components: [new MessageActionRow({ components: [button] })],
   });

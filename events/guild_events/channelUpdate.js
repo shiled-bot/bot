@@ -17,12 +17,12 @@ module.exports = async (client, oldChannel, newChannel) => {
   )
     return;
 
-  const channel = await checkLoggingChannel(
+  const logChannel = await checkLoggingChannel(
     newChannel.guild,
     logging.server.channel_id,
     "server"
   );
-  if (!channel) return;
+  if (!logChannel) return;
 
   let embed = new MessageEmbed()
     .setTitle(newChannel.name)
@@ -57,5 +57,5 @@ module.exports = async (client, oldChannel, newChannel) => {
 
   embed.addField("Channel", newChannel.toString());
 
-  channel.send({ embeds: [embed] });
+  logChannel.send({ embeds: [embed] });
 };
